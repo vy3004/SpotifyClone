@@ -1,0 +1,5 @@
+.body-container {
+  height: 87vh;
+  background-color: blue;
+  display: flex;
+}

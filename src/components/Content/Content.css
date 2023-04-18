@@ -1,0 +1,5 @@
+.content-container {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  background-color: #4a4a4a;
+  width: calc(100% - 30vh);
+}

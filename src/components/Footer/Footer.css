@@ -1,0 +1,5 @@
+.footer-container {
+  height: calc(13vh - 1px);
+  background-color: #181818;
+  border-top: 1px solid rgb(54, 54, 54);
+}

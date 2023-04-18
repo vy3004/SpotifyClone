@@ -1,0 +1,20 @@
+.sidebarOption {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  height: 40px;
+  opacity: 0.7;
+  transition: 200ms opacity ease-in;
+}
+
+.sidebarOption:hover {
+  opacity: 1;
+}
+
+.sidebarOption-icon {
+  padding: 0 10px;
+}
+
+.sidebarOption > p {
+  padding: 0 10px;
+}
