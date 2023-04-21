@@ -1,0 +1,41 @@
+.current-track-container {
+  width: 25%;
+  min-width: 220px;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.current-track-img {
+  height: 100%;
+}
+.current-track-container span {
+  background-color: rgba(100, 100, 100, 0.6) !important;
+}
+.current-track-content {
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 2%;
+}
+.current-track-content p {
+  margin-top: 4px;
+  font-size: small;
+  opacity: 0.7;
+}
+.current-track-content p:hover {
+  opacity: 1;
+}
+
+.current-track-btn {
+  margin: 0 auto;
+  box-shadow: -10px 0px 10px 1px #181818;
+}
+.current-track-btn svg {
+  margin: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.current-track-btn svg:hover {
+  opacity: 1;
+}

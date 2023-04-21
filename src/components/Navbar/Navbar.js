@@ -8,11 +8,16 @@ import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRound
 import { IconButton } from "@mui/material";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 
-export default function Navbar() {
+export default function Navbar({ navBackground, backgroundColor }) {
   const [{ userInfo }] = useStateProvider();
 
   return (
-    <div className="navbar-container">
+    <div
+      className="navbar-container"
+      style={
+        navBackground ? { background: backgroundColor } : { background: "none" }
+      }
+    >
       <div className="navbar-left">
         <IconButton className="navbar-btn-back" title="Go back">
           <ArrowBackIosNewRoundedIcon style={{ color: "white" }} />

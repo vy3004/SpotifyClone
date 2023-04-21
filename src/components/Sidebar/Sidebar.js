@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./Sidebar.css";
-import SidebarOption from "./SidebarOption/SidebarOption";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import LibraryMusicOutlinedIcon from "@mui/icons-material/LibraryMusicOutlined";
@@ -24,15 +23,17 @@ export default function Sidebar() {
         }
       );
       const { items } = response.data;
-      console.log(response);
       const playlists = items.map(({ name, id }) => {
         return { name, id };
       });
-      console.log("LIST==", playlists);
       dispatch({ type: actionTypes.SET_PLAYLISTS, playlists });
     };
     getPlayListUserData();
   }, [token, dispatch]);
+
+  const changeCurrentPlaylist = (playlistById) => {
+    dispatch({ type: actionTypes.SET_PLAYLIST_ID, playlistById });
+  };
 
   return (
     <div className="sidebar-container">
@@ -43,22 +44,42 @@ export default function Sidebar() {
           alt="Spotify"
         />
         <div className="sidebar-list">
-          <SidebarOption Icon={HomeOutlinedIcon} option="Home" />
-          <SidebarOption Icon={SearchRoundedIcon} option="Search" />
-          <SidebarOption
-            Icon={LibraryMusicOutlinedIcon}
-            option="Your Library"
-          />
+          <div className="sidebarOption">
+            <HomeOutlinedIcon className="sidebarOption-icon" />
+            <h4>Home</h4>
+          </div>
+          <div className="sidebarOption">
+            <SearchRoundedIcon className="sidebarOption-icon" />
+            <h4>Search</h4>
+          </div>
+          <div className="sidebarOption">
+            <LibraryMusicOutlinedIcon className="sidebarOption-icon" />
+            <h4>Your Library</h4>
+          </div>
         </div>
 
         <div className="sidebar-list">
-          <SidebarOption Icon={AddBoxIcon} option="Create Playlist" />
-          <SidebarOption Icon={FavoriteIcon} option="Liked Songs" />
+          <div className="sidebarOption">
+            <AddBoxIcon className="sidebarOption-icon" />
+            <h4>Create Playlist</h4>
+          </div>
+          <div className="sidebarOption">
+            <FavoriteIcon className="sidebarOption-icon" />
+            <h4>Liked Songs</h4>
+          </div>
         </div>
         <hr />
-        <div className="sidebar-list">
+        <div className="sidebar-list sidebar-playlists">
           {playlists.map(({ name, id }) => {
-            return <SidebarOption key={id} option={name} />;
+            return (
+              <div
+                className="sidebarOption"
+                key={id}
+                onClick={() => changeCurrentPlaylist(id)}
+              >
+                <p>{name}</p>
+              </div>
+            );
           })}
         </div>
       </div>

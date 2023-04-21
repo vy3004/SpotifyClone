@@ -4,6 +4,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 2%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
 }
 
 .navbar-left {
@@ -56,5 +60,5 @@
 .navbar-user p {
   color: white;
   font-weight: bold;
-  margin: 0 10px;
+  margin-left: 5px;
 }

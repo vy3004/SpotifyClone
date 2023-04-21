@@ -8,6 +8,7 @@ import { actionTypes } from "../../utils/Constant";
 
 export default function Home() {
   const [{ token }, dispatch] = useStateProvider();
+
   useEffect(() => {
     const getUserInfo = async () => {
       const { data } = await axios.get("https://api.spotify.com/v1/me", {

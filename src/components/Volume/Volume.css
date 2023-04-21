@@ -1,0 +1,19 @@
+.volume-container {
+  width: 25%;
+  min-width: 220px;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.volume-container svg {
+  color: white;
+  margin-left: 3%;
+  opacity: 0.7;
+}
+.volume-container svg:hover {
+  opacity: 1;
+}
+.volume-slider {
+  width: 7rem !important;
+}

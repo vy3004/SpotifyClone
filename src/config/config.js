@@ -2,7 +2,7 @@ export const apiUri = "https://accounts.spotify.com/authorize";
 
 const redirectUri = "http://localhost:3000/";
 
-const clientId = "f51c1096ba5e4079b8ac2dced7005b25";
+const clientId = "f23311bc80c44b5181f191e2d4e1c3c0";
 
 const scope = [
   "user-read-email",
